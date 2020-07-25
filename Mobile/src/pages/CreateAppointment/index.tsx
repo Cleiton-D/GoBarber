@@ -159,7 +159,7 @@ const CreateAppointment: React.FC = () => {
           <Icon name="chevron-left" size={24} color="#999591" />
         </BackButton>
         <HeaderTitle>Cabeleireiros</HeaderTitle>
-        <UserAvatar source={{ uri: user.avatar_url }} />
+        <UserAvatar source={{ uri: user.avatar_url || undefined }} />
       </Header>
 
       <Content>
@@ -174,7 +174,9 @@ const CreateAppointment: React.FC = () => {
                 selected={provider.id === selectedProvider}
                 onPress={() => handleSelectProvider(provider.id)}
               >
-                <ProviderAvatar source={{ uri: provider.avatar_url || '' }} />
+                <ProviderAvatar
+                  source={{ uri: provider.avatar_url || undefined }}
+                />
                 <ProviderName selected={provider.id === selectedProvider}>
                   {provider.name}
                 </ProviderName>

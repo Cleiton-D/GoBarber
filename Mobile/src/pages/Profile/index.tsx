@@ -172,7 +172,7 @@ const Profile: React.FC = () => {
             <Icon name="chevron-left" size={24} color="#999591" />
           </BackButton>
           <UserAvatarButton onPress={handleUpdateAvatar}>
-            <UserAvatar source={{ uri: user.avatar_url }} />
+            <UserAvatar source={{ uri: user.avatar_url || undefined }} />
           </UserAvatarButton>
 
           <View>
